@@ -1,0 +1,744 @@
+$engine: 3
+$onesync: on
+name: Havenstad
+version: 1.3.0
+author: JericoFx & Kakarot & Mojito & Hamy
+description: Complete RP Server For FiveM
+
+tasks:
+  
+  
+  #  Download Files
+
+  - action: download_github
+    src: https://github.com/havenstadrp/txAdminRecipe
+    ref: master
+    dest: ./tmp/qbcore
+    
+
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    subpath: resources
+    dest: ./resources/[fivem]
+
+  #  onze chat
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gameplay]/chat/
+    with_items:
+      - chat/
+
+  - action: download_github
+    src: https://github.com/havenstadrp/chat
+    ref: master
+    dest: ./resources/[fivem]/[gameplay]/chat
+
+
+
+
+
+  - action: download_file
+    path: ./tmp/menuv.zip
+    url: https://github.com/ThymonA/menuv/releases/download/v1.4.1/menuv_v1.4.1.zip
+
+  - action: download_file
+    path: /tmp/vMenu.zip
+    url: https://github.com/TomGrobbe/vMenu/releases/download/v3.4.0/vMenu-v3.4.0.zip
+
+
+  # [ standalone ]
+
+  - action: download_github
+    dest: ./resources/[standalone]/bob74_ipl
+    ref: master
+    src: https://github.com/Bob74/bob74_ipl
+
+  - action: download_github
+    dest: ./resources/[standalone]/progressbar
+    ref: main
+    src: https://github.com/qbcore-framework/progressbar
+    
+  - action: download_github
+    dest: ./resources/[standalone]/mhacking
+    ref: main
+    src: https://github.com/qbcore-framework/mhacking
+
+  - action: download_github
+    dest: ./resources/[standalone]/connectqueue
+    ref: master
+    src: https://github.com/qbcore-framework/connectqueue
+
+  - action: download_github
+    dest: ./resources/[standalone]/dpemotes
+    ref: master
+    src: https://github.com/qbcore-framework/dpemotes
+
+  - action: download_github
+    dest: ./resources/[standalone]/LegacyFuel
+    ref: master
+    src: https://github.com/qbcore-framework/LegacyFuel
+
+  # [ voice ]
+
+  - action: download_github
+    dest: ./resources/[voice]/pma-voice
+    ref: main
+    src: https://github.com/AvarianKnight/pma-voice
+
+
+  # [ hrp ]
+  
+  - action: download_github
+    dest: ./resources/[qb]/qb-gangs
+    ref: main
+    src: https://github.com/Mojito-Fivem/qb-gangs
+
+
+
+  #  Havenstad Github Scripts
+
+  # [ ui ]
+  
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/qb-scoreboard
+    ref: main
+    src: https://github.com/havenstadrp/qb-scoreboard
+
+  # - action: download_github
+  #   dest: ./resources/[hrp]/[ui]/qb-hud
+  #   ref: main
+  #   src: https://github.com/havenstadrp/qb-hud
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/cosmo_hud
+    ref: main
+    src: https://github.com/havenstadrp/cosmo_hud
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/qb-skillbar
+    ref: main
+    src: https://github.com/havenstadrp/qb-skillbar
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/qb-keyminigame
+    ref: main
+    src: https://github.com/havenstadrp/qb-keyminigame
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/qb-radialmenu
+    ref: main
+    src: https://github.com/havenstadrp/qb-radialmenu
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/qb-crafting
+    ref: main
+    src: https://github.com/havenstadrp/qb-crafting
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/linden_outlawalert
+    ref: master
+    src: https://github.com/havenstadrp/linden_outlawalert
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ui]/mdt
+    ref: master
+    src: https://github.com/havenstadrp/mdt
+
+
+
+# [ AI ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[ai]/busdrivermike
+    ref: main
+    src: https://github.com/havenstadrp/busdrivermike
+
+
+
+
+
+# [ server ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-core
+    ref: main
+    src: https://github.com/havenstadrp/qb-core
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-weathersync
+    ref: main
+    src: https://github.com/havenstadrp/qb-weathersync
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-phone
+    ref: main
+    src: https://github.com/havenstadrp/qb-phone
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-spawn
+    ref: main
+    src: https://github.com/havenstadrp/qb-spawn
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-smallresources
+    ref: main
+    src: https://github.com/havenstadrp/qb-smallresources
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-logs
+    ref: main
+    src: https://github.com/havenstadrp/qb-logs
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-anticheat
+    ref: main
+    src: https://github.com/havenstadrp/qb-anticheat
+
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-afk
+    ref: main
+    src: https://github.com/havenstadrp/qb-afk
+    
+  - action: download_github
+    dest: ./resources/[hrp]/[server]/qb-commandbinding
+    ref: main
+    src: https://github.com/havenstadrp/qb-commandbinding
+
+
+
+
+# [ Admin ]  
+
+  - action: download_github
+    dest: ./resources/[hrp]/[admin]/qb-adminmenu
+    ref: main
+    src: https://github.com/havenstadrp/qb-adminmenu
+
+  - action: download_github
+    dest: ./resources/[hrp]/[admin]/qb-bossmenu
+    ref: main
+    src: https://github.com/havenstadrp/qb-bossmenu
+
+
+
+
+# [ Character ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[character]/qb-multicharacter
+    ref: main
+    src: https://github.com/havenstadrp/qb-multicharacter
+
+  - action: download_github
+    dest: ./resources/[hrp]/[character]/qb-inventory
+    ref: main
+    src: https://github.com/havenstadrp/qb-inventory
+
+  - action: download_github
+    dest: ./resources/[hrp]/[character]/qb-fitbit
+    ref: main
+    src: https://github.com/havenstadrp/qb-fitbit
+
+  - action: download_github
+    dest: ./resources/[hrp]/[character]/qb-clothing
+    ref: main
+    src: https://github.com/havenstadrp/qb-clothing
+
+  - action: download_github
+    dest: ./resources/[hrp]/[character]/cui_wardrobe
+    ref: master
+    src: https://github.com/havenstadrp/cui_wardrobe
+
+  - action: download_github
+    dest: ./resources/[hrp]/[character]/cui_character
+    ref: master
+    src: https://github.com/havenstadrp/cui_character
+
+
+
+
+#[ Illegal ]
+
+
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-houserobbery
+    ref: main
+    src: https://github.com/havenstadrp/qb-houserobbery
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-coke
+    ref: main
+    src: https://github.com/havenstadrp/qb-coke
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-weed
+    ref: main
+    src: https://github.com/havenstadrp/qb-weed
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-weapons
+    ref: main
+    src: https://github.com/havenstadrp/qb-weapons
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-storerobbery
+    ref: main
+    src: https://github.com/havenstadrp/qb-storerobbery
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-oxyrun
+    ref: main
+    src: https://github.com/havenstadrp/qb-oxyrun
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-truckrobbery
+    ref: main
+    src: https://github.com/havenstadrp/qb-truckrobbery
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-pawnshop
+    ref: main
+    src: https://github.com/havenstadrp/qb-pawnshop
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-methlab
+    ref: main
+    src: https://github.com/havenstadrp/qb-methlab
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-jewelery
+    ref: main
+    src: https://github.com/havenstadrp/qb-jewelery
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-bankrobbery
+    ref: main
+    src: https://github.com/havenstadrp/qb-bankrobbery
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-drugs
+    ref: main
+    src: https://github.com/havenstadrp/qb-drugs
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-lockpick
+    ref: main
+    src: https://github.com/havenstadrp/qb-lockpick
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/qb-printer
+    ref: main
+    src: https://github.com/havenstadrp/qb-printer
+
+  - action: download_github
+    dest: ./resources/[hrp]/[illegal]/safecracker
+    ref: main
+    src: https://github.com/havenstadrp/safecracker
+
+
+
+
+# [ Jobs ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-prison
+    ref: main
+    src: https://github.com/havenstadrp/qb-prison
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-fishing
+    ref: main
+    src: https://github.com/havenstadrp/qb-fishing
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-ambulancejob
+    ref: main
+    src: https://github.com/havenstadrp/qb-ambulancejob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-policejob
+    ref: main
+    src: https://github.com/havenstadrp/qb-policejob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-mechanicjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-mechanicjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-vineyard
+    ref: main
+    src: https://github.com/havenstadrp/qb-vineyard
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-scrapyard
+    ref: main
+    src: https://github.com/havenstadrp/qb-scrapyard
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-towjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-towjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-recyclejob
+    ref: main
+    src: https://github.com/havenstadrp/qb-recyclejob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-diving
+    ref: main
+    src: https://github.com/havenstadrp/qb-diving
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-taxijob
+    ref: main
+    src: https://github.com/havenstadrp/qb-taxijob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-busjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-busjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-newsjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-newsjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-truckerjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-truckerjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-lawyerjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-lawyerjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-hotdogjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-hotdogjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-garbagejob
+    ref: main
+    src: https://github.com/havenstadrp/qb-garbagejob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-builderjob
+    ref: main
+    src: https://github.com/havenstadrp/qb-builderjob
+
+  - action: download_github
+    dest: ./resources/[hrp]/[jobs]/qb-tattooshop
+    ref: master
+    src: https://github.com/havenstadrp/qb-tattooshop
+
+
+
+
+
+
+
+# [ Casino ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[casino]/qb-blackjack
+    ref: main
+    src: https://github.com/havenstadrp/qb-blackjack
+
+  - action: download_github
+    dest: ./resources/[hrp]/[casino]/qb-casino
+    ref: main
+    src: https://github.com/havenstadrp/qb-casino
+
+
+
+
+# [ Banking ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[banking]/qb-atms
+    ref: main
+    src: https://github.com/havenstadrp/qb-atms
+
+  - action: download_github
+    dest: ./resources/[hrp]/[banking]/qb-crypto
+    ref: main
+    src: https://github.com/havenstadrp/qb-crypto
+
+  - action: download_github
+    dest: ./resources/[hrp]/[banking]/qb-banking
+    ref: main
+    src: https://github.com/havenstadrp/qb-banking  
+
+  - action: download_github
+    dest: ./resources/[hrp]/[banking]/qb-moneysafe
+    ref: main
+    src: https://github.com/havenstadrp/qb-moneysafe
+
+
+  
+# [ Buildings ]
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-ifruitstore
+    ref: main
+    src: https://github.com/havenstadrp/qb-ifruitstore
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-houses
+    ref: main
+    src: https://github.com/havenstadrp/qb-houses
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-traphouse
+    ref: main
+    src: https://github.com/havenstadrp/qb-traphouse
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/PolyZone
+    ref: master
+    src: https://github.com/havenstadrp/PolyZone
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-apartments
+    ref: main
+    src: https://github.com/havenstadrp/qb-apartments
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-cityhall
+    ref: main
+    src: https://github.com/havenstadrp/qb-cityhall
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-doorlock
+    ref: main
+    src: https://github.com/havenstadrp/qb-doorlock
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-shops
+    ref: main
+    src: https://github.com/havenstadrp/qb-shops
+
+  - action: download_github
+    dest: ./resources/[hrp]/[buildings]/qb-interior
+    ref: main
+    src: https://github.com/havenstadrp/qb-interior
+
+
+
+    # cars
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/hrp-pushvehicle
+    ref: main
+    src: https://github.com/havenstadrp/hrp-pushvehicle
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-vehiclerental
+    ref: main
+    src: https://github.com/havenstadrp/qb-vehiclerental
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-vehiclesales
+    ref: main
+    src: https://github.com/havenstadrp/qb-vehiclesales
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-vehicleshop
+    ref: main
+    src: https://github.com/havenstadrp/qb-vehicleshop
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-vehiclekeys
+    ref: main
+    src: https://github.com/havenstadrp/qb-vehiclekeys
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-lapraces
+    ref: main
+    src: https://github.com/havenstadrp/qb-lapraces
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-tunerchip
+    ref: main
+    src: https://github.com/havenstadrp/qb-tunerchip
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-vehiclefailure
+    ref: main
+    src: https://github.com/havenstadrp/qb-vehiclefailure
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-customs
+    ref: main
+    src: https://github.com/havenstadrp/qb-customs
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-garages
+    ref: main
+    src: https://github.com/havenstadrp/qb-garages
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-streetraces
+    ref: main
+    src: https://github.com/havenstadrp/qb-streetraces
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-carwash
+    ref: main
+    src: https://github.com/havenstadrp/qb-carwash
+
+  - action: download_github
+    dest: ./resources/[hrp]/[cars]/qb-vehiclepush
+    ref: main
+    src: https://github.com/havenstadrp/qb-vehiclepush
+
+
+
+
+
+  # [ dev ]
+  
+  - action: download_github
+    dest: ./resources/[hrp]/[dev]/nui_doorlock
+    ref: main
+    src: https://github.com/havenstadrp/nui_doorlock
+
+
+
+
+
+# [ IDK ]    
+
+  - action: download_github
+    dest: ./resources/[hrp]/[idk]/fivem-vstancer
+    ref: master
+    src: https://github.com/havenstadrp/fivem-vstancer
+
+  - action: download_github
+    dest: ./resources/[hrp]/[idk]/xsound
+    ref: master
+    src: https://github.com/havenstadrp/xsound 
+
+  - action: download_github
+    dest: ./resources/[hrp]/[idk]/qb-companies
+    ref: main
+    src: https://github.com/havenstadrp/qb-companies
+
+
+
+  # Unzip Files
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/ghmattimysql.zip
+
+
+  - action: unzip
+    dest: ./resources/[standalone]/menuv
+    src: ./tmp/menuv.zip
+
+  - action: unzip
+    dest: ./resources/[standalone]/vMenu
+    src: ./tmp/vMenu.zip
+
+  # Create directories
+
+  - action: ensure_dir
+    path: ./resources/[voice]
+
+  - action: ensure_dir
+    path: ./resources/[fivem]
+
+  - action: ensure_dir
+    path: ./resources/[qb]
+
+  - action: ensure_dir
+    path: ./resources/[standalone]
+
+  - action: ensure_dir
+    path: ./resources/[tmp]
+
+    
+  # Move into directories
+
+  - action: move_path
+    src: ./tmp/qbcore/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/qbcore/havenstad.png
+    dest: ./havenstad.png
+
+
+  #   # move to tmp folder
+  # - action: move_path
+  #   src: ./resources/[qb]/qb-gangs/qb-gangs
+  #   dest: ./resources/[tmp]/qb-gangs
+  #   overwrite: true  
+
+
+
+  #   # move to proper folder
+  # - action: move_path
+  #   src: ./resources/[tmp]/qb-gangs
+  #   dest: ./resources/[qb]/qb-gangs
+  #   overwrite: true  
+
+
+  # Connect to the database
+
+  - action: connect_database
+  - action: query_database
+    file: ./tmp/qbcore/qbcore.sql
+
+  - action: write_file
+    file: ./resources/[standalone]/ghmattimysql/config.json
+    data: |
+      {
+        "user": "{{dbUsername}}",
+        "password": "{{dbPassword}}",
+        "host": "{{dbHost}}",
+        "port": 3306,
+        "database": "{{dbName}}"
+      }
+
+  - action: replace_string
+    mode: all_vars
+    file:
+      - ./resources/[standalone]/ghmattimysql/config.json
+
+  # Clean up
+
+  - action: remove_path
+    path: ./tmp
+
+  - action: remove_path
+    path: ./resources/[fivem]/[test]
+
+  - action: remove_path
+    path: ./resources/[tmp]
+
+  - action: remove_path
+    path: ./resources/[fivem]/[local]
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gameplay]/chat-theme-gtao
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gameplay]/[examples]
+
+  - action: remove_path
+    path: ./resources/[fivem]/[system]/sessionmanager-rdr3
+
+  - action: remove_path
+    path: ./resources/[fivem]/[system]/runcode
+
+  - action: remove_path
+    path: ./resources/[fivem]/[system]/rconlog
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gamemodes]/[maps]
