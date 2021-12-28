@@ -145,18 +145,6 @@ tasks:
     src: https://github.com/havenstadrp/mdt
 
 
-
-# [ AI ]
-
-  - action: download_github
-    dest: ./resources/[hrp]/[ai]/busdrivermike
-    ref: main
-    src: https://github.com/havenstadrp/busdrivermike
-
-
-
-
-
 # [ server ]
 
   - action: download_github
